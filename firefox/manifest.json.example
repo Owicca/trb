@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "trb",
+  "version": "0.1.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{uuid}"
+    }
+  },
+  "description": "description",
+  "icons": {
+    "48": "icons/trb_16.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "activeTab",
+    "storage",
+    "tabs",
+    "cookies",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "Trb",
+    "default_icon": {
+      "16": "icons/trb_16.png",
+      "32": "icons/favicon-32x32.png"
+    }
+  },
+  "web_accessible_resources": [
+    "views/manager/index.html",
+    "views/manager/index.js",
+    "views/manager/index.css"
+  ],
+  "background": {
+    "scripts": [
+      "background/scripts.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.triburile.ro/*"
+      ],
+      "js": [
+        "content_scripts/scripts.js"
+      ]
+    }
+  ]
+}
